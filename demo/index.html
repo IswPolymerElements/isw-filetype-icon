@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>isw-filetype-icon demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../../paper-styles/color.html">
+	<link rel="import" href="../isw-filetype-icon.html">
+
+	<custom-style>
+		<style is="custom-style" include="demo-pages-shared-styles">
+			isw-filetype-icon {
+				color: var(--paper-grey-700);
+			}
+		</style>
+	</custom-style>
+</head>
+<body>
+<div class="vertical-section-container centered">
+	<h3>Basic isw-filetype-icon demo</h3>
+	<demo-snippet>
+		<template>
+			<isw-filetype-icon mime-type="not/known"></isw-filetype-icon>
+
+			<isw-filetype-icon mime-type="text/plain"></isw-filetype-icon>
+			<isw-filetype-icon mime-type="application/javascript"></isw-filetype-icon>
+			<isw-filetype-icon mime-type="application/pdf"></isw-filetype-icon>
+
+			<isw-filetype-icon mime-type="image/jpeg"></isw-filetype-icon>
+			<isw-filetype-icon mime-type="video/mpeg"></isw-filetype-icon>
+			<isw-filetype-icon mime-type="audio/wav"></isw-filetype-icon>
+
+			<isw-filetype-icon mime-type="application/msword"></isw-filetype-icon>
+			<isw-filetype-icon mime-type="application/msexcel"></isw-filetype-icon>
+			<isw-filetype-icon mime-type="application/mspowerpoint"></isw-filetype-icon>
+		</template>
+	</demo-snippet>
+</div>
+</body>
+</html>

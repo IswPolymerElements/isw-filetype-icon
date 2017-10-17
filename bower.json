@@ -1,0 +1,19 @@
+{
+  "name": "isw-filetype-icon",
+  "description": "Material Design Polymer 2.0 iron-icon extension accepting mime-type.",
+  "main": "isw-filetype-icon.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^2.0.1",
+    "isw-filetype-icons": "IswPolymerElements/isw-filetype-icons"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  }
+}

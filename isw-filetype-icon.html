@@ -1,0 +1,109 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../isw-filetype-icons/isw-filetype-icons.html">
+
+<dom-module id="isw-filetype-icon">
+
+	<script>
+		/**
+		 * `isw-filetype-icon`
+		 * Material Design Polymer 2.0 iron-icon extension accepting mime-type.
+		 *
+		 * @customElement
+		 * @polymer
+		 * @demo demo/index.html
+		 */
+		class IswFiletypeIcon extends window.customElements.get( 'iron-icon' ) {
+			static get is() { return 'isw-filetype-icon'; }
+
+			static get properties() {
+				return {
+					mimeType: {
+						type: String,
+						notify: true,
+						value: ''
+					},
+					icon: {
+						type: String,
+						computed: '_computeIcon(mimeType)'
+					},
+					_iconMimeTypes: {
+						type: Object,
+						value: {
+							audio: [
+								'audio/flac',
+								'audio/mp4',
+								'audio/mpeg',
+								'audio/ogg',
+								'audio/wav'
+							],
+							code: [
+								'application/javascript',
+								'application/json',
+								'application/xhtml+xml',
+								'application/xml',
+								'text/comma-separated-values',
+								'text/css',
+								'text/html',
+								'text/javascript',
+								'text/xml'
+							],
+							excel: [
+								'application/msexcel'
+							],
+							image: [
+								'image/gif',
+								'image/jpeg',
+								'image/png',
+								'image/tiff'
+							],
+							pdf: [
+								'application/pdf'
+							],
+							powerpoint: [
+								'application/mspowerpoint'
+							],
+							text: [
+								'application/rtf',
+								'text/plain',
+								'text/richtext',
+								'text/rtf'
+							],
+							video: [
+								'video/mpeg',
+								'video/quicktime',
+								'video/vnd.vivo',
+								'video/x-msvideo',
+								'video/x-sgi-movie'
+							],
+							word: [
+								'application/msword'
+							]
+						}
+					},
+					_mimeTypeToIconMap: {
+						type: Object,
+						value: {}
+					}
+				};
+			}
+
+			ready() {
+				this._mimeTypeToIconMap = {};
+				for( var key in this._iconMimeTypes ) {
+					for( var i = 0; i < this._iconMimeTypes[ key ].length; i++ ) {
+						this._mimeTypeToIconMap[ this._iconMimeTypes[ key ][ i ] ] = key;
+					}
+				}
+				super.ready();
+			}
+
+			_computeIcon( mimeType ) {
+				return 'isw-filetype:' + ( this._mimeTypeToIconMap[ mimeType ] || 'file' );
+			}
+		}
+
+		window.customElements.define( IswFiletypeIcon.is, IswFiletypeIcon );
+	</script>
+</dom-module>
